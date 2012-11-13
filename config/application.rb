@@ -11,7 +11,9 @@ end
 
 module Brasol
   class Application < Rails::Application
-    
+
+    Rails.application.config.i18n.default_locale = :ru
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|

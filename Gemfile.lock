@@ -7,6 +7,14 @@ GIT
       devise (~> 2.0.4)
       spree_core
 
+GIT
+  remote: git://github.com/spree/spree_i18n.git
+  revision: ec891e2bbd40cdf1c3481e961709b3dca22bb71f
+  specs:
+    spree_i18n (1.0.0)
+      i18n (~> 0.5)
+      spree (~> 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -107,7 +115,7 @@ GEM
     money (5.0.0)
       i18n (~> 0.4)
       json
-    multi_json (1.3.6)
+    multi_json (1.3.7)
     multi_xml (0.5.1)
     nested_set (1.7.0)
       activerecord (>= 3.0.0)
@@ -155,7 +163,7 @@ GEM
       polyamorous (~> 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
-    sass (3.2.1)
+    sass (3.2.3)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -221,10 +229,10 @@ GEM
     stringex (1.3.3)
     thor (0.16.0)
     tilt (1.3.3)
-    treetop (1.4.11)
+    treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.33)
+    tzinfo (0.3.35)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
@@ -245,6 +253,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spree (= 1.2.0)
   spree_auth_devise!
+  spree_i18n!
   spree_skrill
   spree_usa_epay
   sqlite3

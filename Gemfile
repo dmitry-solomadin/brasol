@@ -7,7 +7,6 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -39,4 +38,5 @@ gem 'jquery-rails'
 gem 'spree', '1.2.0'
 gem 'spree_usa_epay'
 gem 'spree_skrill'
+gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
 gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise'
