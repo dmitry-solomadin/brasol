@@ -1,0 +1,23 @@
+body {
+    background-color: #AAEEFF;
+    font-family: 'StoryRegular', sans-serif;
+}
+
+#logo {
+    padding-top: 15px;
+}
+
+#header h1 {
+    left: 250px;
+}
+
+#header {
+    height: 114px;
+}
+
+@font-face {
+    font-family: 'StoryRegular';
+    src: url('/story-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

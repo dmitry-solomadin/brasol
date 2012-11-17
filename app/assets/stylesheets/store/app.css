@@ -1,3 +1,254 @@
 body {
     padding-top: 20px;
+    font-family: 'StoryRegular', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-family: 'StoryBold', sans-serif;
+}
+
+th {
+    font-weight: normal;
+    font-family: 'StoryBold', sans-serif;
+    letter-spacing: 1px;
+}
+
+a {
+    color: #FA197D;
+}
+
+a:hover {
+    color: #ad1158 !important;
+}
+
+input[type="submit"], input[type="submit"], button, a.button {
+    background-color: #FA197D;
+    border: none;
+    font-family: 'StoryRegular';
+    font-weight: normal;
+    text-transform: uppercase;
+    box-shadow: none;
+}
+
+button[disabled='disabled'] {
+    color: white;
+    background: #404042;
+}
+
+button.large {
+    padding: 9px 18px 7px 18px;
+    font-size: 14px;
+}
+
+input[type="submit"], a.button, button {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 3px 15px 0 15px
+}
+
+.flash, .errorExplanation {
+    font-weight: normal;
+    font-family: 'StoryRegular';
+    letter-spacing: 1px;
+}
+
+ul#products li a.info {
+    font-weight: normal;
+    font-family: 'StoryBold';
+    font-size: 14px;
+    color: black;
+}
+
+ul#products li .price {
+    font-weight: normal;
+    font-family: 'StoryBold';
+}
+
+#header {
+    position: relative;
+    z-index: 5;
+}
+
+span.price, #checkout-summary table tr[data-hook="item_total"] td:last-child strong,
+#checkout-summary table #summary-order-total, #order_details td.price span,
+#order_details td.total span, #order_summary td.price span, #order_summary td.total span,
+table#cart-detail tbody#line_items tr td[data-hook="cart_item_price"],
+table#cart-detail tbody#line_items tr td[data-hook="cart_item_total"],
+div[data-hook="inside_cart_form"] #subtotal span.order-total {
+    font-weight: normal;
+    font-family: 'StoryBold';
+}
+
+#billing legend, #shipping legend, #shipping_method legend,
+#payment legend, #order_details legend, #order_summary legend {
+    font-weight: normal;
+    color: black;
+}
+
+#checkout .three.columns {
+    width: 245px !important;
+}
+
+#checkout .thirteen.columns {
+    width: 675px !important;
+}
+
+#main-nav-bar li > a:hover {
+    color: white !important;
+    background: #404042;
+}
+
+nav #main-nav-bar li > a {
+    padding: 7px 6px 5px 6px !important;
+}
+
+nav #main-nav-bar {
+    padding-bottom: 4px;
+}
+
+nav #main-nav-bar li#link-to-cart > a {
+    font-size: 18px;
+    padding: 6px 6px 4px 6px !important;
+}
+
+#sidebar_products_search .filter-title {
+    font-weight: normal;
+    color: black;
+}
+
+#breadcrumbs li a {
+    color: #FA197D;
+}
+
+#breadcrumbs li span {
+    font-weight: normal;
+    font-family: 'StoryBold', sans-serif;
+}
+
+nav #main-nav-bar li#link-to-cart > a {
+    font-family: 'StoryBold';
+    font-weight: normal;
+    color: #FA197D;
+}
+
+nav #main-nav-bar li#link-to-cart > a .amount {
+    font-family: 'StoryBold';
+    font-weight: normal;
+}
+
+nav #main-nav-bar li#link-to-cart a .amount {
+    border-left: none;
+}
+
+nav#taxonomies .taxonomy-root {
+    font-family: 'StoryBold';
+    font-weight: normal;
+    font-size: 16px;
+}
+
+nav#taxonomies .taxons-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+nav#taxonomies .taxons-list > li {
+    padding: 2px;
+}
+
+nav#taxonomies .taxons-list > li > a {
+    font-size: 14px;
+}
+
+nav#taxonomies .taxons-list > li > a:hover {
+    padding: 1px;
+    background: #FA197D;
+    color: white !important;
+}
+
+nav #main-nav-bar {
+    font-weight: normal;
+}
+
+nav#top-nav-bar ul li a {
+    font-weight: normal;
+}
+
+ul#products li .product-image:hover {
+    border-color: #FA197D !important;
+}
+
+.cart-item-description, td[data-hook='order_item_description'] {
+    width: 400px;
+}
+
+#shipping_method p label {
+    font-weight: normal;
+    font-family: "StoryBold";
+}
+
+.progress-steps li.current-first, .progress-steps li.current {
+    background: #FA197D;
+}
+
+[data-hook='checkout_form_wrapper']{
+    width: auto !important;
+}
+
+.progress-steps li {
+    font-weight: normal;
+    font-family: 'StoryRegular';
+    letter-spacing: 1px;
+    padding:6px 20px 4px 20px;
+}
+
+.progress-steps li.completed-first:hover, .progress-steps li.completed:hover {
+    background: #FA197D;
+    color: white;
+}
+
+table.order-summary tbody tr td:first-child a {
+    font-family: 'StoryBold';
+    font-weight: normal;
+    color: #FA197D;
+}
+
+#link-to-cart span.amount {
+    display: inline !important;
+}
+
+@font-face {
+    font-family: 'StoryItalic';
+    src: url('/assets/story_i-webfont.eot');
+}
+
+@font-face {
+    font-family: 'StoryItalic';
+    src: url('/assets/story_i-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'StoryBold';
+    src: url('/assets/story_b-webfont.eot');
+}
+
+@font-face {
+    font-family: 'StoryBold';
+    src: url('/assets/story_b-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'StoryRegular';
+    src: url('/assets/story-webfont.eot');
+}
+
+@font-face {
+    font-family: 'StoryRegular';
+    src: url('/assets/story-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
