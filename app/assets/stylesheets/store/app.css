@@ -3,12 +3,28 @@ body {
     font-family: 'StoryRegular', sans-serif;
 }
 
+.hide {
+    display: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-family: 'StoryBold', sans-serif;
 }
 
 th {
+    font-weight: normal;
+    font-family: 'StoryBold', sans-serif;
+    letter-spacing: 1px;
+}
+
+strong {
+    font-weight: normal;
+    font-family: 'StoryBold', sans-serif;
+    letter-spacing: 1px;
+}
+
+dl dt {
     font-weight: normal;
     font-family: 'StoryBold', sans-serif;
     letter-spacing: 1px;
@@ -215,6 +231,25 @@ table.order-summary tbody tr td:first-child a {
 
 #link-to-cart span.amount {
     display: inline !important;
+}
+
+.user-info h4 {
+    font-family: "StoryRegular";
+}
+
+.user-info h4 .edit {
+    font-size: 12px;
+}
+
+.user-info dt {
+    width: 200px;
+    font-family: "StoryRegular";
+}
+
+.user-info {
+    margin-bottom: 15px;
+    border: 1px solid #D9D9DB;
+    padding: 10px;
 }
 
 @font-face {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026104540) do
+ActiveRecord::Schema.define(:version => 20121118151336) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -555,6 +555,8 @@ ActiveRecord::Schema.define(:version => 20121026104540) do
     t.datetime "locked_at"
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
+    t.string   "firstname"
+    t.string   "lastname"
   end
 
   add_index "spree_users", ["email"], :name => "email_idx_unique", :unique => true

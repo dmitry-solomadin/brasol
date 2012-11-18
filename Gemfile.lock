@@ -101,6 +101,7 @@ GEM
       builder (>= 2.1.2)
     highline (1.6.11)
     hike (1.2.1)
+    hirb (0.7.0)
     httparty (0.8.3)
       multi_json (~> 1.0)
       multi_xml
@@ -256,6 +257,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  hirb
   jquery-rails
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)

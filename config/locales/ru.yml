@@ -304,7 +304,7 @@ ru:
   bill_address: "Платёжный адрес"
   billing_address_new: "Адрес доставки"
   billing: "Биллинг"
-  billing_address: "Платёжный адрес1"
+  billing_address: "Платёжный адрес"
   both: "везде"
   calculator: "Калькулятор"
   calculator_settings_warning: "При изменении типа калькулятора, вы должны сохранить это изменение, прежде, чем вы сможете изменить настройки калькулятора."
