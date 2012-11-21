@@ -1,3 +1,5 @@
+require "bundler/capistrano"
+
 set :application, "brasol"
 set :repository,  "git@github.com:znvPredatoR/brasol"
 set :scm, "git"
@@ -60,7 +62,7 @@ after 'deploy:symlink_shared', 'deploy:precompile_assets'
 after 'deploy:update', 'foreman:export'
 after 'deploy:update', 'foreman:restart'
 
-        require './config/boot'
+require './config/boot'
         
 
 
