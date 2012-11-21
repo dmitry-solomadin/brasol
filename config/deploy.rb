@@ -1,7 +1,7 @@
-set :application, "Brasol"
+set :application, "brasol"
 set :repository,  "git@github.com:znvPredatoR/brasol"
 set :scm, "git"
-set :user, "znvPredatoR"
+set :user, "root"
 set :scm_passphrase, "thequaker1"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
@@ -61,7 +61,7 @@ after 'deploy:update', 'foreman:export'
 after 'deploy:update', 'foreman:restart'
 
         require './config/boot'
-        require 'airbrake/capistrano'
+        
 
 
 
