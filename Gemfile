@@ -21,6 +21,14 @@ end
 
 group :development do
   gem "hirb"
+  gem 'capistrano'
+end
+
+group :production do
+  gem 'unicorn'
+  gem 'mysql2'
+  gem 'foreman'
+  gem 'therubyracer' #only required for 0.70.x or later
 end
 
 gem 'jquery-rails'
@@ -45,3 +53,4 @@ gem 'spree_skrill'
 gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
 gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise'
 gem 'spree_minicart', :git => 'git://github.com/sbounmy/spree_minicart.git'
+gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git"
