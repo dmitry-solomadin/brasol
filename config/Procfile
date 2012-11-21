@@ -1,0 +1,1 @@
+unicorn: bundle exec unicorn_rails -c /data/spree/shared/config/unicorn.rb -E production -D

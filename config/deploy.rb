@@ -14,7 +14,6 @@ role :app, "78.47.164.71"
 role :db, "78.47.164.71", :primary => true
 
 set :deploy_to,   "/data/#{application}"
-set :deploy_via,  :remote_cache
 set :use_sudo,    false
 
 default_run_options[:pty] = true
@@ -45,7 +44,7 @@ end
 namespace :deploy do
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/cached-copy/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/s3.yml #{release_path}/config/s3.yml"
     run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
     run "ln -nfs #{shared_path}/config/Procfile #{release_path}/Procfile"
@@ -53,7 +52,7 @@ namespace :deploy do
 
   desc "Compile assets"
   task :precompile_assets, :roles => :app do
-    run "cd #{release_path} && bundle exec rake assets:precompile"
+    run "cd #{release_path} && bundle exec rake assets:precompile --trace"
   end
 end
 
