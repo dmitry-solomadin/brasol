@@ -14,6 +14,7 @@ role :app, "78.47.164.71"
 role :db, "78.47.164.71", :primary => true
 
 set :deploy_to,   "/data/#{application}"
+set :deploy_via, :remote_cache
 set :use_sudo,    false
 
 default_run_options[:pty] = true
@@ -47,7 +48,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/cached-copy/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/s3.yml #{release_path}/config/s3.yml"
     run "ln -nfs #{shared_path}/config/newrelic.yml #{release_path}/config/newrelic.yml"
-    run "ln -nfs #{shared_path}/config/Procfile #{release_path}/Procfile"
+    run "ln -nfs #{shared_path}/cached-copy/config/Procfile #{release_path}/Procfile"
   end
 
   desc "Compile assets"
