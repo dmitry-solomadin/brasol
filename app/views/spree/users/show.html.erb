@@ -19,6 +19,7 @@
       <dd><%= @user.firstname %></dd>
     </div>
   </dl>
+  <% if @user.bill_address.present? %>
   <dl id="user-info-address" class="user-info">
     <h4>Адрес доставки по-умолчанию</h4>
 
@@ -49,6 +50,7 @@
       <dd><%= @user.bill_address.phone %></dd>
     </div>
   </dl>
+  <% end %>
 </div>
 
 <div data-hook="account_my_orders" class="account-my-orders">
