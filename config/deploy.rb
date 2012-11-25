@@ -26,6 +26,11 @@ namespace :foreman do
     run "cd #{current_path} && bundle exec foreman export upstart /etc/init -a #{application} -u spree"
   end
 
+  desc "Own deploy folder"
+  task :export, :roles => :app do
+    run "cd #{current_path} && cd .. && chown -R spree:spree ."
+  end
+
   desc "Start the application services"
   task :start, :roles => :app do
     sudo "start #{application}"
@@ -60,6 +65,7 @@ end
 after 'deploy:update_code', 'deploy:symlink_shared'
 after 'deploy:symlink_shared', 'deploy:precompile_assets'
 after 'deploy:update', 'foreman:export'
+after 'deploy:update', 'foreman:prepare'
 after 'deploy:update', 'foreman:restart'
 
 require './config/boot'
