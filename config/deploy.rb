@@ -27,7 +27,7 @@ namespace :foreman do
   end
 
   desc "Own deploy folder"
-  task :export, :roles => :app do
+  task :prepare, :roles => :app do
     run "cd #{current_path} && cd .. && chown -R spree:spree ."
   end
 
