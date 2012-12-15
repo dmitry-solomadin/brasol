@@ -39,7 +39,7 @@ namespace :starter do
 
   desc "Restart the application services"
   task :restart, :roles => :app do
-    sudo "cd #{current_path}/config && bash script brasol-starter restart"
+    sudo "cd #{current_path}/config && ./brasol-starter restart"
   end
 end
 
