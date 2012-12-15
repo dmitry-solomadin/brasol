@@ -29,17 +29,17 @@ namespace :starter do
 
   desc "Start the application services"
   task :start, :roles => :app do
-    sudo "cd #{current_path}/config && bash script brasol-starter start"
+    run "cd #{current_path}/config && bash script brasol-starter start"
   end
 
   desc "Stop the application services"
   task :stop, :roles => :app do
-    sudo "cd #{current_path}/config && bash script brasol-starter stop"
+    run "cd #{current_path}/config && bash script brasol-starter stop"
   end
 
   desc "Restart the application services"
   task :restart, :roles => :app do
-    sudo "cd #{current_path}/config && ./brasol-starter restart"
+    run "cd #{current_path}/config && ./brasol-starter restart"
   end
 end
 
