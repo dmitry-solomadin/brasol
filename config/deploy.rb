@@ -24,7 +24,7 @@ namespace :starter do
   desc "Own deploy folder"
   task :prepare, :roles => :app do
     run "cd #{current_path} && cd .. && chown -R spree:spree ."
-    run "cd #{current_path}/config && chmod +x "
+    run "cd #{current_path}/config && chmod +x brasol_starter"
   end
 
   desc "Start the application services"
@@ -65,7 +65,7 @@ end
 
 after 'deploy:update_code', 'deploy:symlink_shared'
 after 'deploy:symlink_shared', 'deploy:precompile_assets'
-#after 'deploy:symlink_shared', 'deploy:migrate_db'
+after 'deploy:symlink_shared', 'deploy:migrate_db'
 after 'deploy:update', 'starter:prepare'
 after 'deploy:update', 'starter:restart'
 
