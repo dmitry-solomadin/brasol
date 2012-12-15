@@ -24,7 +24,7 @@ namespace :starter do
   desc "Own deploy folder"
   task :prepare, :roles => :app do
     run "cd #{current_path} && cd .. && chown -R spree:spree ."
-    run "cd #{current_path}/config && chmod +x brasol_starter"
+    run "cd #{current_path}/config && chmod +x brasol-starter"
   end
 
   desc "Start the application services"
