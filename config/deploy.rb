@@ -24,6 +24,7 @@ namespace :starter do
   desc "Own deploy folder"
   task :prepare, :roles => :app do
     run "cd #{current_path} && cd .. && chown -R spree:spree ."
+    run "cd #{current_path}/config && chmod +x "
   end
 
   desc "Start the application services"
@@ -55,10 +56,16 @@ namespace :deploy do
   task :precompile_assets, :roles => :app do
     run "cd #{release_path} && bundle exec rake assets:precompile --trace"
   end
+
+  desc "Migrate db"
+  task :migrate_db, :roles => :app do
+    run "cd #{release_path} && bundle exec rake db:migrate --trace"
+  end
 end
 
 after 'deploy:update_code', 'deploy:symlink_shared'
 after 'deploy:symlink_shared', 'deploy:precompile_assets'
+#after 'deploy:symlink_shared', 'deploy:migrate_db'
 after 'deploy:update', 'starter:prepare'
 after 'deploy:update', 'starter:restart'
 
