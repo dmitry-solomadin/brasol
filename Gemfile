@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'bootstrap-sass'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,3 +55,4 @@ gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
 gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise'
 gem 'spree_minicart', :git => 'git://github.com/sbounmy/spree_minicart.git'
 gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git"
+gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content.git', :branch => '1-2-stable'

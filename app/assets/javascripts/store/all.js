@@ -12,5 +12,6 @@
 //= require store/spree_minicart
 //= require store/spree_product_zoom
 
+//= require bootstrap
 //= require_tree .
 

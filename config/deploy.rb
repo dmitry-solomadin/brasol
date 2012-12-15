@@ -20,12 +20,7 @@ set :use_sudo,    false
 default_run_options[:pty] = true
 set :ssh_options, { :forward_agent => true }
 
-namespace :foreman do
-  desc "Export the Procfile to Ubuntu's upstart scripts"
-  task :export, :roles => :app do
-    run "cd #{current_path} && bundle exec foreman export upstart /etc/init -a #{application} -u spree"
-  end
-
+namespace :starter do
   desc "Own deploy folder"
   task :prepare, :roles => :app do
     run "cd #{current_path} && cd .. && chown -R spree:spree ."
@@ -33,17 +28,17 @@ namespace :foreman do
 
   desc "Start the application services"
   task :start, :roles => :app do
-    sudo "start #{application}"
+    sudo "cd #{current_path}/config && bash script brasol-starter start"
   end
 
   desc "Stop the application services"
   task :stop, :roles => :app do
-    sudo "stop #{application}"
+    sudo "cd #{current_path}/config && bash script brasol-starter stop"
   end
 
   desc "Restart the application services"
   task :restart, :roles => :app do
-    sudo "restart #{application}"
+    sudo "cd #{current_path}/config && bash script brasol-starter restart"
   end
 end
 
@@ -64,9 +59,8 @@ end
 
 after 'deploy:update_code', 'deploy:symlink_shared'
 after 'deploy:symlink_shared', 'deploy:precompile_assets'
-after 'deploy:update', 'foreman:export'
-after 'deploy:update', 'foreman:prepare'
-after 'deploy:update', 'foreman:restart'
+after 'deploy:update', 'starter:prepare'
+after 'deploy:update', 'starter:restart'
 
 require './config/boot'
 

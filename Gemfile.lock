@@ -30,6 +30,14 @@ GIT
     spree_product_zoom (1.3)
       spree_core (~> 1.2)
 
+GIT
+  remote: git://github.com/spree/spree_static_content.git
+  revision: d775ecf38a71365f4ee030451611fe55871e27b2
+  branch: 1-2-stable
+  specs:
+    spree_static_content (1.1.0.beta)
+      spree_core (~> 1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -82,6 +90,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.1.1.0)
     builder (3.0.4)
     cancan (1.6.7)
     capistrano (2.13.5)
@@ -288,6 +297,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   capistrano
   coffee-rails (~> 3.2.1)
   foreman
@@ -302,6 +312,7 @@ DEPENDENCIES
   spree_minicart!
   spree_product_zoom!
   spree_skrill
+  spree_static_content!
   spree_usa_epay
   sqlite3
   therubyracer

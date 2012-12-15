@@ -1,0 +1,91 @@
+<%= form_for :order, :url => populate_orders_url do |f| %>
+    <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+      <div id="product-variants" class="columns five alpha">
+
+        <% if @double_option and not @other_variants_present %>
+            <% if @double_option['sizes'].present? %>
+                <h6 class="product-section-title"><%= t(:size) %></h6>
+                <select class="propSelect" id="sizeSelect">
+                  <option value="-1" selected="selected"><%= t(:select_size) %></option>
+                  <% @double_option['sizes'].each do |s| %>
+                      <option for="<%= ['products', @product.id, s.id].join('_') %>" value="<%= s.id %>">
+                        <span class="variant-description">
+                            <%= s.presentation %>
+                        </span>
+                      </option>
+                  <% end %>
+                </select>
+            <% end %>
+
+            <% if @double_option['colors'].present? %>
+                <h6 class="product-section-title"><%= t(:color) %></h6>
+                <select class="propSelect" id="colorSelect">
+                  <option value="-1" selected="selected"><%= t(:select_color) %></option>
+                  <% @double_option['colors'].each do |c| %>
+                      <option for="<%= ['products', @product.id, c.id].join('_') %>" value="<%= c.id %>">
+                        <span class="variant-description">
+                            <%= c.presentation %>
+                        </span>
+                      </option>
+                  <% end %>
+                </select>
+            <% end %>
+
+            <% @double_option['variant_ids'].each_key do |key| %>
+                <input type="hidden" id="variant<%= key %>" value="<%= @double_option['variant_ids'][key] %>"/>
+            <% end %>
+        <% end %>
+
+        <div class="<%= 'hide' unless @other_variants_present %>">
+          <h6 class="product-section-title"><%= t(:choose_parameters) %></h6>
+          <select name="products[<%= @product.id %>]" id="variantsSelect">
+            <% has_checked = false
+               @product.variants.active.each_with_index do |v, index|
+                 next if v.option_values.empty? || (!v.in_stock && !Spree::Config[:show_zero_stock_products])
+                 checked = !has_checked && (v.in_stock || Spree::Config[:allow_backorders])
+                 has_checked = true if checked %>
+
+                <option for="<%= ['products', @product.id, v.id].join('_') %>" value="<%= v.id %>">
+                        <span class="variant-description">
+                            <%= variant_options v %>
+                        </span>
+                  <% if variant_price_diff v %>
+                      <span class="price diff"><%= variant_price_diff v %></span>
+                  <% end %>
+                </option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+
+      <% if @product.price %>
+          <div data-hook="product_price" class="columns five <%= if !@product.has_variants? then
+                                                                   'alpha'
+                                                                 else
+                                                                   'omega'
+                                                                 end %>">
+
+            <div id="product-price">
+              <h6 class="product-section-title"><%= t(:price) %></h6>
+
+              <div><span class="price selling" itemprop="price"><%= money @product.price %></span></div>
+            </div>
+
+            <div class="add-to-cart">
+              <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
+                  <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+                                       1, :class => 'title', :in => 1..@product.on_hand %>
+                  <%= button_tag :class => 'large primary', :id => 'add-to-cart-button', :type => :submit do %>
+                      <%= t(:add_to_cart) %>
+                  <% end %>
+              <% else %>
+                  <%= content_tag('strong', t(:out_of_stock)) %>
+              <% end %>
+            </div>
+
+          </div>
+      <% end %>
+
+    </div>
+<% end %>
