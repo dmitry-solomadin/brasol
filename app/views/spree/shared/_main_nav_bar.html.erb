@@ -1,0 +1,15 @@
+<nav class="columns alpha omega sixteen">
+  <ul id="main-nav-bar" class="inline" data-hook>
+    <li id="home-link" data-hook><%= link_to t(:home), root_path %></li>
+    <% get_taxonomies.each do |taxonomy| %>
+        <li id="taxonomyRoot<%= taxonomy.id %>" class='taxonomy-root taxonomy-root-header'
+            data-tax-id="<%= taxonomy.id %>">
+          <%= link_to t(:shop_by_taxonomy, :taxonomy => taxonomy.name.singularize), seo_url(taxonomy.root) %>
+        </li>
+        <div id="taxonomyContent<%= taxonomy.id %>" class="taxonomyContent hide">
+          <%= taxons_tree(taxonomy.root, @taxon, Spree::Config[:max_level_in_taxons_menu] || 1) %>
+        </div>
+    <% end %>
+    <li id="link-to-cart" data-hook><%= link_to_cart %></li>
+  </ul>
+</nav>
