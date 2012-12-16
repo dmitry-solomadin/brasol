@@ -221,7 +221,7 @@ ul#products li .product-image:hover {
     background: #FA197D;
 }
 
-[data-hook='checkout_form_wrapper']{
+[data-hook='checkout_form_wrapper'] {
     width: auto !important;
 }
 
@@ -229,7 +229,7 @@ ul#products li .product-image:hover {
     font-weight: normal;
     font-family: 'StoryRegular';
     letter-spacing: 1px;
-    padding:6px 20px 4px 20px;
+    padding: 6px 20px 4px 20px;
 }
 
 .progress-steps li.completed-first:hover, .progress-steps li.completed:hover {
@@ -271,12 +271,12 @@ table.order-summary tbody tr td:first-child a {
 }
 
 .cart-popover {
-    background: rgba(64,64,64, 0.95) !important;
+    background: rgba(64, 64, 64, 0.95) !important;
     border-radius: 0 !important;
     color: white;
     box-shadow: none !important;
     width: 100px;
-    border:none !important;
+    border: none !important;
     font-size: 15px;
     text-align: center;
 }
@@ -290,12 +290,25 @@ table.order-summary tbody tr td:first-child a {
 }
 
 .cart-popover .arrow {
-    border-top-color: rgba(64,64,64, 0.95) !important;
+    border-top-color: rgba(64, 64, 64, 0.95) !important;
 }
 
 #minicart-items {
     max-height: 280px;
     overflow: auto;
+}
+
+.pagination {
+    font-size: 16px;
+}
+
+.pagination .next, .pagination .prev {
+    font-size: 20px;
+}
+
+.pagination a {
+    line-height: 33px !important;
+    padding-top: 5px !important;
 }
 
 @font-face {

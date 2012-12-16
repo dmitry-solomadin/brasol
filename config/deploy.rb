@@ -59,7 +59,7 @@ namespace :deploy do
 
   desc "Migrate db"
   task :migrate_db, :roles => :app do
-    run "cd #{release_path} && bundle exec rake db:migrate --trace"
+    run "cd #{current_path} && bundle exec rake db:migrate --trace"
   end
 end
 
