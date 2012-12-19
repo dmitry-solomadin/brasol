@@ -1,0 +1,28 @@
+<div class="taxon-title-div">
+  <h1 class="taxon-title"><%= accurate_title %></h1>
+
+  <div class="taxon-desc">
+    <%= @taxon.description %>
+  </div>
+  <% if @taxon.children.any? %>
+  <div class="sub-taxon-div">
+    <% @taxon.children.each do |taxon| %>
+        <span class="sub-taxon">
+            <%= link_to taxon.name, seo_url(taxon) %>
+        </span>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+<% content_for :sidebar do %>
+    <div data-hook="taxon_sidebar_navigation">
+      <%= render :partial => 'spree/shared/taxonomies' %>
+      <%= render :partial => 'spree/shared/filters' if @taxon.children.empty? %>
+    </div>
+<% end %>
+
+<div data-hook="taxon_products">
+  <%= render :partial => 'spree/shared/products', :locals => {:products => @products, :taxon => @taxon} %>
+</div>
+

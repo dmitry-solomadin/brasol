@@ -110,6 +110,49 @@ div[data-hook="inside_cart_form"] #subtotal span.order-total {
     font-family: 'StoryBold';
 }
 
+.subtaxon-title a {
+    color: #FA197D;
+}
+
+.taxon-title-div {
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+    padding: 10px 50px;
+    text-align: center;
+}
+
+.taxon-desc {
+    color: #404040;
+}
+
+.taxon-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'StoryRegular';
+    font-size: 22px;
+}
+
+.sub-taxon-div {
+    margin-left: 90px;
+    margin-top: 10px;
+}
+
+.sub-taxon {
+    width: 75px !important;
+    display: inline-block;
+    text-align: left;
+    margin-right: 75px;
+}
+
+.sub-taxon a {
+    padding: 2px;
+}
+
+.sub-taxon a:hover {
+    background: black;
+    color: white !important;
+}
+
 #billing legend, #shipping legend, #shipping_method legend,
 #payment legend, #order_details legend, #order_summary legend {
     font-weight: normal;
@@ -340,6 +383,14 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
 
 .pagination li.active:hover a {
     color: rgb(153, 153, 153) !important;
+}
+
+ul#products li .product-image {
+    border: none;
+}
+
+ul#products li a.info {
+    border-bottom: 1px solid #ececec;
 }
 
 @font-face {
