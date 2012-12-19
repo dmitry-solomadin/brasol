@@ -25,7 +25,15 @@
 <div class="container">
   <%= render :partial => 'spree/shared/header' %>
   <div id="wrapper" class="row" data-hook>
-    <%= breadcrumbs(@taxon) %>
+
+    <%
+       if @taxon.present?
+         taxon = @taxon
+       elsif @product.present?
+         taxon = @product.taxons.first
+       end
+    %>
+    <%= breadcrumbs(taxon) %>
     <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
     <div id="content" class="columns omega <%= !content_for?(:sidebar) ? "sixteen alpha" : "twelve" %>" data-hook>
       <%= flash_messages %>
