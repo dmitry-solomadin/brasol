@@ -180,7 +180,7 @@ module Spree
       end
 
       return Spree::ProductFilters.all_taxons if taxon.nil?
-      { :name   => t(:sub_categories),
+      { :name   => I18n::t(:sub_categories),
         :scope  => :taxons_id_in_tree_any,
         :labels => taxon.children.sort_by(&:position).map {|t| [t.name, t.id]},
         :conds  => nil
