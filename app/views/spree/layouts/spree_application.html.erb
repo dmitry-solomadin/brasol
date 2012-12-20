@@ -31,7 +31,6 @@
          taxon = @taxon
        elsif @product.present?
          taxon = @product.taxons.first
-         raise "here"
        end
     %>
     <%= breadcrumbs(taxon) %>

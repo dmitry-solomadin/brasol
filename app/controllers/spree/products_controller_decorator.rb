@@ -37,4 +37,23 @@ Spree::ProductsController.class_eval do
                       'colors' => colors.uniq,
                       'variant_ids' => variant_ids}
   end
+
+  def show
+    return unless @product
+
+    @variants = Spree::Variant.active.includes([:option_values, :images]).where(:product_id => @product.id)
+    @product_properties = Spree::ProductProperty.includes(:property).where(:product_id => @product.id)
+
+    referer = request.env['HTTP_REFERER']
+    if referer
+      referer_path = URI.parse(request.env['HTTP_REFERER']).path
+      referer_path = URI.decode(referer_path)
+      if referer_path && referer_path.match(/\/t\/(.*)/)
+        @taxon = Spree::Taxon.find_by_permalink($1)
+      end
+    end
+
+    respond_with(@product)
+  end
+
 end
