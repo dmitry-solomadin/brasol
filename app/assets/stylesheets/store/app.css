@@ -149,7 +149,7 @@ div[data-hook="inside_cart_form"] #subtotal span.order-total {
 }
 
 .sub-taxon a:hover {
-    background: black;
+    background: #404040;
     color: white !important;
 }
 
