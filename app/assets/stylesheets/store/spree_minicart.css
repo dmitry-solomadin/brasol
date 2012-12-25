@@ -19,7 +19,7 @@ ul#minicart-items li {
 #minicart {
     z-index: 100;
     position: absolute;
-    right: 16px;
+    right: 0;
     padding: 10px;
     border: 1px solid #DEDEDE;
     float: right;

@@ -1,7 +1,10 @@
 <%= form_for :order, :url => populate_orders_url do |f| %>
     <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
-      <div id="product-variants" class="columns five alpha">
+      <div id="product-variants" class="columns seven alpha">
+        <div itemprop="description" data-hook="description">
+          <%= product_description(@product) rescue t(:product_has_no_description) %>
+        </div>
 
         <% if @double_option and not @other_variants_present %>
             <% if @double_option['sizes'].present? %>
