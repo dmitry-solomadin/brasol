@@ -478,11 +478,16 @@ ul#products li a.info {
 }
 
 div[data-hook="product_price"] {
-    width: 250px !important;
+    width: 260px !important;
 }
 
 div[data-hook="product_right_part"] {
     width: 670px !important;
+}
+
+.add-to-cart button.large.primary {
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
 @font-face {
