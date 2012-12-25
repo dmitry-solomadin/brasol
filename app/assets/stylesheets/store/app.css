@@ -417,11 +417,14 @@ ul#products li a.info {
 
 #product-thumbnails li img {
     padding: 0;
+    vertical-align: middle;
 }
 
 #product-thumbnails li {
     margin-bottom: 5px;
     margin-right: 3px;
+    height: 115px;
+    line-height: 115px;
 }
 
 #product-thumbnails li:nth-child(1){
@@ -446,6 +449,15 @@ ul#products li a.info {
 
 #product-thumbnails li:nth-child(6){
     margin-right:0;
+}
+
+#main-image {
+    height: 370px;
+    line-height: 370px;
+}
+
+#main-image img {
+    vertical-align: middle;
 }
 
 @font-face {
