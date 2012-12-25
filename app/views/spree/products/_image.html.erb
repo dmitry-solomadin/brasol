@@ -1,19 +1,15 @@
 <% if image %>
-    <%= link_to image_tag(image.attachment.url(:product), :itemprop => "image"), image.attachment.url(:original), :class => 'fancybox zoom-image' %>
-    <br/>
-    <%= link_to image_tag('zoom.gif'), image.attachment.url(:original), :class => 'fancybox zoom-image' %>
+    <%= link_to image_tag(image.attachment.url(:product), :itemprop => "image"), image.attachment.url(:superbig), :class => 'fancybox zoom-image' %>
 <% else %>
     <% if @product.images.empty? %>
         <%= product_image(@product, :itemprop => "large") %>
     <% else %>
-        <% image_url = @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style) %>
+        <% image_url = @product.images.first.attachment.url(:superbig) %>
         <%= link_to product_image(@product, :itemprop => "image"), image_url, "data-thumbnail" => image_url, :class => 'fancybox zoom-image large-image', :rel => 'gallery' %>
-        <br/>
-        <%= link_to image_tag('zoom.gif', :class => 'click-to-zoom'), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'zoom-image click-to-zoom', :rel => 'gallery' %>
         <div id="gallery" style="display:none;">
           <% @product.images.each do |img| %>
               <% unless img == @product.images.first %>
-                  <% thumb_image_url = img.attachment.url(Spree::ProductZoom::Config.default_image_style) %>
+                  <% thumb_image_url = img.attachment.url(:superbig) %>
                   <%= link_to image_tag(img.attachment.url(:product)), thumb_image_url, "data-thumbnail" => thumb_image_url, :class => 'fancybox', :rel => 'gallery' %>
               <% end %>
           <% end %>
