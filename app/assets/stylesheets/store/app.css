@@ -111,6 +111,10 @@ input[type="submit"], a.button, button {
     letter-spacing: 1px;
 }
 
+.errorExplanation h2 {
+    color: white !important;
+}
+
 ul#products li a.info {
     font-weight: normal;
     font-family: 'StoryBold';
@@ -285,8 +289,24 @@ ul#products li .product-image:hover {
     padding: 0 !important;
 }
 
-.cart-item-description, td[data-hook='order_item_description'] {
+.cart-item-description {
     width: 400px;
+}
+
+td[data-hook='order_item_total'] {
+    text-align: right;
+}
+
+td[data-hook='order_item_price'], td[data-hook='order_item_qty'] {
+    text-align: center;
+}
+
+tr[data-hook='order_details_line_items_headers'] .total{
+    text-align: right;
+}
+
+tr[data-hook='order_details_line_items_headers'] .name{
+    text-align: left;
 }
 
 #shipping_method p label {
