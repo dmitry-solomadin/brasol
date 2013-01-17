@@ -1108,6 +1108,7 @@ ru:
   stop: "Конец"
   store: "В магазин"
   street_address: "Адрес"
+  street_address_exp: "Адрес (улица, № дома, № квартиры)"
   street_address_2: "Адрес (строка 2)"
   subtotal: "Подитог"
   subtract: "Вычет"

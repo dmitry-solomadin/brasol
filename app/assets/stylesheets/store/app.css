@@ -536,6 +536,12 @@ div[data-hook="product_right_part"] {
     color: white !important;
 }
 
+#registration [type='submit'], [data-hook='signup'] [type='submit'], [data-hook='login'] [type='submit'] {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 6px 20px 3px 20px;
+}
+
 @font-face {
     font-family: 'StoryItalic';
     src: url('/assets/story_i-webfont.eot');

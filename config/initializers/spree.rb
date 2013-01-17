@@ -16,6 +16,7 @@ end
 Spree.user_class = "Spree::User"
 Spree::Config.set(:allow_ssl_in_production => false)
 Spree::Config.set(:allow_guest_checkout => false)
+Spree::Config.set(:address_requires_state => false)
 
 if Rails.env.production?
   Spree::Config.set(:attachment_path => '/data/brasol/public/spree/products/:id/:style/:basename.:extension')
