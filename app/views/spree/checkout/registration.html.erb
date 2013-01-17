@@ -1,0 +1,9 @@
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<div id="registration" data-hook>
+  <div id="loginr" class="columns alpha eight">
+    <%= render :file => 'spree/user_sessions/new', locals: {aux_links: false} %>
+  </div>
+  <div id="registrationus" class="columns alpha eight">
+    <%= render :file => 'spree/user_registrations/new', locals: {aux_links: false} %>
+  </div>
+</div>

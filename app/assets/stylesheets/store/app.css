@@ -510,6 +510,32 @@ div[data-hook="product_right_part"] {
     padding-right: 22px;
 }
 
+#password-showable-wrap {
+    position: relative;
+}
+
+.password-showing {
+    width: 291px;
+}
+
+.show-password-link {
+    display: block;
+    position: absolute;
+    z-index: 11;
+    width: 60px;
+    padding: 6px 0 3px 0;
+    line-height: 14px;
+    text-align: center;
+    background: #FA197D;
+    color: white;
+    top: 28px !important;
+    left: 300px !important;
+}
+
+.show-password-link:hover {
+    color: white !important;
+}
+
 @font-face {
     font-family: 'StoryItalic';
     src: url('/assets/story_i-webfont.eot');
