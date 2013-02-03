@@ -30,7 +30,7 @@ start() {
 }
 
 stop() {
-  PIDS=`ps aux | grep 'unicorn' | grep -v 'grep' | awk '{print $2}'`
+  PIDS=`ps aux | grep 'brasol' | grep -v 'grep' | awk '{print $2}'`
   for PID in $PIDS
   do
     kill -9 $PID
