@@ -15,11 +15,11 @@ $ ->
       colorMissing = ` $("#colorSelect option:selected").val() == -1 `
       if sizeMissing or colorMissing
         if sizeMissing and colorMissing
-          popoverContent = "Выберете размер и цвет"
+          popoverContent = "Выберите размер и цвет"
         else if sizeMissing
-          popoverContent = "Выберете размер"
+          popoverContent = "Выберите размер"
         else if colorMissing
-          popoverContent = "Выберете цвет"
+          popoverContent = "Выберите цвет"
 
         $('#add-to-cart-button').data("class", "cart-popover")
         $('#add-to-cart-button').data("offset-height", "25")
