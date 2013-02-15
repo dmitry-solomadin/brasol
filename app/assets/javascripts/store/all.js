@@ -12,6 +12,7 @@
 //= require store/spree_minicart
 //= require store/spree_product_zoom
 //= require jquery.showpassword
+//= require css_browser_selector
 
 //= require bootstrap
 //= require_tree .

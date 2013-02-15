@@ -1,6 +1,11 @@
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,6 +28,8 @@ end
 group :development do
   gem "hirb"
   gem 'capistrano'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
@@ -48,11 +55,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-gem 'spree', '1.2.0'
+gem 'spree', '1.3.2'
 gem 'spree_usa_epay'
 gem 'spree_skrill'
-gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git'
-gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise'
-gem 'spree_minicart', :git => 'git://github.com/sbounmy/spree_minicart.git'
-gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git"
-gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content.git', :branch => '1-2-stable'
+gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', :branch => '1-3-stable'
+gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise', :branch => '1-3-stable'
+gem "spree_product_zoom", :git => "git://github.com/spree/spree_product_zoom.git", :branch => '1-3-stable'
+gem 'spree_static_content', :git => 'git://github.com/spree/spree_static_content.git', :branch => '1-3-stable'

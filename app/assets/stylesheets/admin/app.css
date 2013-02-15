@@ -1,10 +1,10 @@
 body {
-    background-color: #AAEEFF;
     font-family: 'StoryRegular', sans-serif;
 }
 
 #logo {
     padding-top: 15px;
+    height: 80px;
 }
 
 #header h1 {
