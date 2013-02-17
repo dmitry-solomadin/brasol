@@ -8,7 +8,7 @@ Spree::BaseHelper.class_eval do
   end
 
   def bottom_level_taxons(root_taxon)
-    return root_taxon if root_taxon.children.empty?
+    return [root_taxon] if root_taxon.children.empty?
     root_taxon.children.map do |taxon|
       bottom_level_taxons(taxon)
     end.flatten
