@@ -1,0 +1,8 @@
+<nav id="taxonomies" class="sidebar-item" data-hook>
+  <% @products.each_pair do |taxon, products| %>
+    <% next if products.empty? %>
+    <h1 class="taxon-title taxon-title-home"><%= taxon.name %></h1>
+    <a href="<%= seo_url(taxon) %>">Смотреть все &rarr;</a>
+    <%= render partial: 'spree/shared/products', :locals => { products: products } %>
+  <% end %>
+</nav>

@@ -188,6 +188,11 @@ div[data-hook="inside_cart_form"] #subtotal span.order-total {
     font-size: 22px;
 }
 
+.taxon-title-home {
+    display: inline-block;
+    margin-right: 15px;
+}
+
 .sub-taxon-div {
     margin-left: 90px;
     margin-top: 10px;
