@@ -1,5 +1,6 @@
 require "bundler/capistrano"
 require "delayed/recipes"
+require "i18n"
 
 set :rails_env, "production" #added for delayed job
 set :application, "brasol"
@@ -66,7 +67,7 @@ namespace :deploy do
 
   desc "Backup db"
   task :backup_db, :roles => :app do
-    dump_date = I18n.l DateTime.now, format: "%d-%m-%Y_%H-%M"
+    dump_date = l DateTime.now, format: "%d-%m-%Y_%H-%M"
     run "cd #{shared_path}/dbdump && mysqldump -uroot -p brasol > brasol_#{dump_date}.sql"
   end
 end
