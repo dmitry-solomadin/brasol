@@ -24,8 +24,8 @@ module Brasol
       end
     end
 
-
     Rails.application.config.i18n.default_locale = :ru
+    Rails.application.config.i18n.locale = :ru
 
     config.to_prepare do
       # Load application's model / class decorators
