@@ -1144,7 +1144,7 @@ ru:
       message: 'If you have received this email, then your email settings are correct.'
       subject: 'Testmail'
   test_mode: "Тестовый режим"
-  thank_you_for_your_order: "Спасибо за покупку!"
+  thank_you_for_your_order: "Спасибо за покупку! Мы свяжемся с вами в ближайшее вермя чтобы уточнить детали доставки."
   there_were_problems_with_the_following_fields: "Возникли некоторые проблемы со следующими полями"
   this_file_language: "Русский (RU)"
   thumbnail: "Миниатюра"

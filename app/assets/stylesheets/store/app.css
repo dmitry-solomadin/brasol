@@ -227,6 +227,14 @@ input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hove
     color: black;
 }
 
+#order_summary {
+    padding: 0 10px;
+}
+
+#order_summary #order .steps-data div.columns:first-child {
+    margin-left: 0;
+}
+
 #checkout .three.columns {
     width: 245px !important;
 }
