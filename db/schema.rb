@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214232924) do
+ActiveRecord::Schema.define(:version => 20130226163819) do
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -292,9 +308,9 @@ ActiveRecord::Schema.define(:version => 20130214232924) do
   add_index "spree_pending_promotions", ["user_id"], :name => "index_spree_pending_promotions_on_user_id"
 
   create_table "spree_preferences", :force => true do |t|
-    t.text     "value",      :limit => 255
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.text     "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "key"
     t.string   "value_type"
   end
@@ -564,15 +580,15 @@ ActiveRecord::Schema.define(:version => 20130214232924) do
   end
 
   create_table "spree_users", :force => true do |t|
-    t.string   "encrypted_password",     :limit => 128
-    t.string   "password_salt",          :limit => 128
+    t.string   "encrypted_password"
+    t.string   "password_salt"
     t.string   "email"
     t.string   "remember_token"
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                         :default => 0, :null => false
-    t.integer  "failed_attempts",                       :default => 0, :null => false
+    t.integer  "sign_in_count",                        :default => 0, :null => false
+    t.integer  "failed_attempts",                      :default => 0, :null => false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -581,8 +597,8 @@ ActiveRecord::Schema.define(:version => 20130214232924) do
     t.string   "login"
     t.integer  "ship_address_id"
     t.integer  "bill_address_id"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.datetime "created_at",                                          :null => false
+    t.datetime "updated_at",                                          :null => false
     t.string   "spree_api_key",          :limit => 48
     t.string   "authentication_token"
     t.string   "unlock_token"
@@ -607,10 +623,10 @@ ActiveRecord::Schema.define(:version => 20130214232924) do
     t.integer  "product_id"
     t.integer  "count_on_hand",                               :default => 0
     t.decimal  "cost_price",    :precision => 8, :scale => 2
+    t.string   "cost_currency"
     t.integer  "position"
     t.integer  "lock_version",                                :default => 0
     t.boolean  "on_demand",                                   :default => false
-    t.string   "cost_currency"
   end
 
   add_index "spree_variants", ["product_id"], :name => "index_spree_variants_on_product_id"

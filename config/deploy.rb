@@ -1,7 +1,9 @@
 require "bundler/capistrano"
+require "delayed/recipes"
 
+set :rails_env, "production" #added for delayed job
 set :application, "brasol"
-set :repository,  "git@github.com:znvPredatoR/brasol"
+set :repository, "git@github.com:znvPredatoR/brasol"
 set :scm, "git"
 set :user, "root"
 set :scm_passphrase, "thequaker1"
@@ -9,16 +11,16 @@ set :scm_passphrase, "thequaker1"
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "78.47.164.71"                          # Your HTTP server, Apache/etc
+role :web, "78.47.164.71" # Your HTTP server, Apache/etc
 role :app, "78.47.164.71"
 role :db, "78.47.164.71", :primary => true
 
-set :deploy_to,   "/data/#{application}"
+set :deploy_to, "/data/#{application}"
 set :deploy_via, :remote_cache
-set :use_sudo,    false
+set :use_sudo, false
 
 default_run_options[:pty] = true
-set :ssh_options, { :forward_agent => true }
+set :ssh_options, {:forward_agent => true}
 
 namespace :starter do
   desc "Own deploy folder"
@@ -68,6 +70,10 @@ after 'deploy:symlink_shared', 'deploy:precompile_assets'
 after 'deploy:symlink_shared', 'deploy:migrate_db'
 after 'deploy:update', 'starter:prepare'
 after 'deploy:update', 'starter:restart'
+
+after "deploy:stop", "delayed_job:stop"
+after "deploy:start", "delayed_job:start"
+after "deploy:restart", "delayed_job:restart"
 
 require './config/boot'
 

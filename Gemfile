@@ -13,6 +13,8 @@ gem 'rails', '3.2.12'
 gem 'sqlite3'
 gem 'bootstrap-sass'
 
+gem 'delayed_job_active_record'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -37,6 +39,7 @@ group :production do
   gem 'mysql2'
   gem 'foreman'
   gem 'therubyracer' #only required for 0.70.x or later
+  gem "daemons" # required for delayed_job
 end
 
 gem 'jquery-rails'

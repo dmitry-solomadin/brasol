@@ -194,15 +194,15 @@ div[data-hook="inside_cart_form"] #subtotal span.order-total {
 }
 
 .sub-taxon-div {
-    margin-left: 90px;
+    margin-left: 0;
     margin-top: 10px;
 }
 
 .sub-taxon {
-    width: 75px !important;
+    width: 195px !important;
     display: inline-block;
-    text-align: left;
-    margin-right: 75px;
+    text-align: center;
+    margin-right: 0;
 }
 
 .sub-taxon a {
