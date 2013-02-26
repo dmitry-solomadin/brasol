@@ -68,7 +68,7 @@ namespace :deploy do
   desc "Backup db"
   task :backup_db, :roles => :app do
     dump_date = I18n.l DateTime.now, format: "%d-%m-%Y_%H-%M"
-    run "cd #{shared_path}/dbdump && mysqldump -uroot -p brasol > brasol_#{dump_date}.sql"
+    run "cd #{shared_path}/dbdump && mysqldump -uroot brasol > brasol_#{dump_date}.sql"
   end
 end
 
