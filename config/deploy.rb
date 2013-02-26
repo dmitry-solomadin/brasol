@@ -80,7 +80,7 @@ after 'deploy:update', 'starter:prepare'
 after 'deploy:update', 'starter:restart'
 
 after "deploy:stop", "delayed_job:stop"
-after "deploy:start", "delayed_job:start"
+after "deploy:start", "delayed_job:restart"
 after "deploy:restart", "delayed_job:restart"
 
 require './config/boot'
