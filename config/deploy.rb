@@ -63,11 +63,18 @@ namespace :deploy do
   task :migrate_db, :roles => :app do
     run "cd #{current_path} && bundle exec rake db:migrate --trace"
   end
+
+  desc "Backup db"
+  task :backup_db, :roles => :app do
+    dump_date = l Date.now, format: "%d-%m-%Y_%H-%M"
+    run "cd #{shared_path}/dbdump && mysqldump -uroot -p brasol > brasol_#{dump_date}.sql"
+  end
 end
 
 after 'deploy:update_code', 'deploy:symlink_shared'
 after 'deploy:symlink_shared', 'deploy:precompile_assets'
 after 'deploy:symlink_shared', 'deploy:migrate_db'
+after 'deploy:update', 'deploy:backup_db'
 after 'deploy:update', 'starter:prepare'
 after 'deploy:update', 'starter:restart'
 
