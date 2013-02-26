@@ -14,7 +14,7 @@ input, button, a {
 
 select {
     border: 1px solid #D9D9DB;
-    font-family: "Ubuntu",sans-serif;
+    font-family: "Ubuntu", sans-serif;
     background-image: url("select_arrow.gif");
     background-repeat: no-repeat;
     background-position: right center;
@@ -24,7 +24,7 @@ select {
 textarea, select, input[type="date"], input[type="datetime"],
 input[type="datetime-local"], input[type="email"], input[type="month"],
 input[type="number"], input[type="password"], input[type="search"],
-input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"]{
+input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -214,6 +214,13 @@ div[data-hook="inside_cart_form"] #subtotal span.order-total {
     color: white !important;
 }
 
+input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:hover, a.button:hover {
+    background-image: none;
+    background-color: #404042;
+    border-color: #404042;
+    color: white !important;
+}
+
 #billing legend, #shipping legend, #shipping_method legend,
 #payment legend, #order_details legend, #order_summary legend {
     font-weight: normal;
@@ -345,11 +352,11 @@ td[data-hook='order_item_price'], td[data-hook='order_item_qty'] {
     text-align: center;
 }
 
-tr[data-hook='order_details_line_items_headers'] .total{
+tr[data-hook='order_details_line_items_headers'] .total {
     text-align: right;
 }
 
-tr[data-hook='order_details_line_items_headers'] .name{
+tr[data-hook='order_details_line_items_headers'] .name {
     text-align: left;
 }
 
