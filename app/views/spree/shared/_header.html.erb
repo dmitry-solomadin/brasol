@@ -1,0 +1,10 @@
+<header id="header" class="row" data-hook>
+  <div class="super-top">
+    <a href="/account">Моя учетная запись</a>
+    <a href="/user/logout">Выйти</a>
+  </div>
+  <div style="clear: both;"></div>
+  <figure id="logo" class="columns six" data-hook><%= logo %></figure>
+  <%= render :partial => 'spree/shared/nav_bar' %>
+  <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+</header>

@@ -10,6 +10,7 @@ input, button, a {
 
 #logo {
     margin: 0;
+    width: 240px !important;
 }
 
 select {
@@ -153,6 +154,82 @@ ul#products li .price {
     position: relative;
     z-index: 5;
     margin-bottom: 10px;
+}
+
+.footer-social {
+    float: right;
+}
+
+.footer-social span {
+    vertical-align: top;
+}
+
+.footer-social img {
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+#footer-left {
+    color: #707070;
+}
+
+#footer-right ul {
+    list-style: none;
+    margin: 0;
+}
+
+#footer-right ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+#footer-right ul li a {
+    color: #505050;
+    text-decoration: underline;
+}
+
+#footer-pages {
+    float: right;
+}
+
+.header_left_center {
+    float: left;
+    margin-top: 23px;
+}
+
+.header_center {
+    float: right;
+}
+
+.header_center img {
+    float: left;
+    margin-left: 20px;
+}
+
+.phone {
+    float: left;
+    color: #202020;
+    font-size: 26px;
+    margin-top: 28px;
+    margin-left: 20px;
+}
+
+#top-nav-bar {
+    width: 690px;
+    margin-right: 0;
+}
+
+.super-top {
+    float: right;
+    position: absolute;
+    right: 10px;
+}
+
+.super-top a {
+    float: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-right: 10px;
 }
 
 span.price, #checkout-summary table tr[data-hook="item_total"] td:last-child strong,
