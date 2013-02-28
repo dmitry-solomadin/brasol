@@ -1,7 +1,12 @@
 <header id="header" class="row" data-hook>
   <div class="super-top">
-    <a href="/account">Моя учетная запись</a>
-    <a href="/user/logout">Выйти</a>
+    <% if spree_current_user %>
+        <%= link_to t(:my_account), spree.account_path %>
+        <%= link_to t(:logout), spree.destroy_user_session_path %>
+    <% else %>
+        <%= render :partial => '/shared/reg_link' %>
+        <%= link_to t(:login), spree.login_path, html: {id: "link-to-login"} %>
+    <% end %>
   </div>
   <div style="clear: both;"></div>
   <figure id="logo" class="columns six" data-hook><%= logo %></figure>
