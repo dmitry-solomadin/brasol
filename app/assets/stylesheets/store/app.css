@@ -156,6 +156,10 @@ ul#products li .price {
     margin-bottom: 10px;
 }
 
+#footer {
+    margin-left: 0;
+}
+
 .footer-social {
     float: right;
 }
