@@ -20,7 +20,14 @@
 
       <div id="product-description" data-hook="product_description">
 
-        <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
+        <div class="product-title">
+          <h1 itemprop="name" style=""><%= accurate_title %></h1>
+          <% if @product.price %>
+              <div id="product-price" class="product-price-wrap" style="">
+                <span class="price selling" itemprop="price"><%= money @product.price %></span>
+              </div>
+          <% end %>
+        </div>
 
         <div id="cart-form" data-hook="cart_form">
           <%= render :partial => 'cart_form' %>

@@ -646,6 +646,22 @@ div[data-hook="product_right_part"] {
     width: 640px !important;
 }
 
+.product-price-wrap {
+    margin-bottom: 5px;
+}
+
+.product-price-wrap .price {
+    color: black;
+}
+
+.product-title h1 {
+    font-family: 'StoryRegular'
+}
+
+.add-to-cart {
+    margin-top: 0;
+}
+
 .add-to-cart button.large.primary {
     padding-left: 10px;
     padding-right: 10px;

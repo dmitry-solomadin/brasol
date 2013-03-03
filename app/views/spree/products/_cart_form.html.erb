@@ -63,17 +63,8 @@
       </div>
 
       <% if @product.price %>
-          <div data-hook="product_price" class="columns five <%= if !@product.has_variants? then
-                                                                   'alpha'
-                                                                 else
-                                                                   'omega'
-                                                                 end %>">
-
-            <div id="product-price">
-              <h6 class="product-section-title"><%= t(:price) %></h6>
-
-              <div><span class="price selling" itemprop="price"><%= money @product.price %></span></div>
-            </div>
+          <% product_class = !@product.has_variants? ? 'alpha' : 'omega' %>
+          <div data-hook="product_price" class="columns five <%= product_class %>">
 
             <div class="add-to-cart">
               <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
