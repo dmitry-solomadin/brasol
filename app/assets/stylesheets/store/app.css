@@ -142,6 +142,8 @@ ul#products li a.info {
     font-family: 'StoryBold';
     font-size: 14px;
     color: black;
+    border: none;
+    height: auto !important;
 }
 
 ul#products li .price {
@@ -585,10 +587,6 @@ ul#products li .product-image {
     height: 225px;
 }
 
-ul#products li a.info {
-    border-bottom: 1px solid #ececec;
-}
-
 #product-thumbnails li img {
     padding: 0;
     vertical-align: middle;
@@ -648,6 +646,11 @@ div[data-hook="product_right_part"] {
 
 .addthis_toolbox {
     margin-top: 20px;
+}
+
+.product-view-all {
+    text-transform: none;
+    margin-left: 5px;
 }
 
 #vk_like {

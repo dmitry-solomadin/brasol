@@ -53,6 +53,13 @@ Spree::ProductsController.class_eval do
       end
     end
 
+    if @product.taxons.present?
+      base_scope = Spree::Product.active
+      base_scope = base_scope.in_taxon(@product.taxons[0])
+      base_scope = base_scope.on_hand unless Spree::Config[:show_zero_stock_products]
+      @similiar_products = base_scope.includes([:master => :prices]).limit(5)
+    end
+
     respond_with(@product)
   end
 
