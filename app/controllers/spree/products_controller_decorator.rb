@@ -57,8 +57,9 @@ Spree::ProductsController.class_eval do
       base_scope = Spree::Product.active
       base_scope = base_scope.in_taxon(@product.taxons[0])
       base_scope = base_scope.on_hand unless Spree::Config[:show_zero_stock_products]
-      @similiar_products = base_scope.includes([:master => :prices]).limit(5)
+      @similar_products = base_scope.includes([:master => :prices]).limit(5)
     end
+    @similar_products.reject! { |p| p.id == @product.id }
 
     respond_with(@product)
   end

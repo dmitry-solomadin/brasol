@@ -62,8 +62,8 @@
         <a class="product-view-all" href="<%= seo_url(@product.taxons[0]) %>">Смотреть все &rarr;</a>
       </h6>
       <div data-hook="product_taxons">
-        <ul id="products" class="inline product-listing" data-hook>
-          <% @similiar_products.each do |product| %>
+        <ul id="products" class="inline product-listing similar-products" data-hook>
+          <% @similar_products.each do |product| %>
               <% if product.on_display? %>
                   <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
                     <div class="product-image">

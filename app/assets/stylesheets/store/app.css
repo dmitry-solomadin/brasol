@@ -146,6 +146,11 @@ ul#products li a.info {
     height: auto !important;
 }
 
+ul.similar-products li a.info {
+    font-family: 'StoryRegular' !important;
+    font-size: 13px !important;
+}
+
 ul#products li .price {
     font-weight: normal;
     color: #FA197D;
@@ -337,6 +342,7 @@ nav #main-nav-bar li > a {
 
 nav #main-nav-bar {
     padding-bottom: 4px;
+    margin-bottom: 5px;
 }
 
 nav #main-nav-bar li#link-to-cart > a {
@@ -356,6 +362,9 @@ aside#sidebar {
 #breadcrumbs {
     margin-right: 0;
     margin-left: 0;
+    padding: 0;
+    margin-bottom: 12px;
+    border: none;
 }
 
 #breadcrumbs li a {
