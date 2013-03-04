@@ -646,6 +646,23 @@ div[data-hook="product_right_part"] {
     width: 640px !important;
 }
 
+.addthis_toolbox {
+    margin-top: 20px;
+}
+
+#vk_like {
+    float:left !important;
+    clear: none !important;
+}
+
+#product-description .product-title {
+    border-bottom: 3px solid #ededed;
+}
+
+.addthis_button_facebook_like iframe {
+    width: 120px !important;
+}
+
 .product-price-wrap {
     margin-bottom: 5px;
 }
