@@ -660,7 +660,11 @@ div[data-hook="product_right_part"] {
 }
 
 .addthis_button_facebook_like iframe {
-    width: 120px !important;
+    width: 110px !important;
+}
+
+.addthis_button_tweet iframe {
+    width: 85px !important;
 }
 
 .product-price-wrap {
