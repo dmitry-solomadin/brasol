@@ -139,14 +139,14 @@ input[type="submit"], a.button, button {
 
 ul#products li a.info {
     font-weight: normal;
-    font-family: 'StoryBold';
+    font-family: 'StoryRegular';
     font-size: 14px;
     color: black;
     border: none;
     height: auto !important;
 }
 
-ul.similar-products li a.info {
+ul.similar-products l   i a.info {
     font-family: 'StoryRegular' !important;
     font-size: 13px !important;
 }
@@ -155,6 +155,7 @@ ul#products li .price {
     font-weight: normal;
     color: #FA197D;
     font-family: 'StoryBold';
+    padding-top: 2px;
 }
 
 #header {
@@ -438,6 +439,10 @@ ul#products li .product-image:hover {
 
 .product-image {
     padding: 0 !important;
+}
+
+.product-bottom {
+    min-height: 56px;
 }
 
 .cart-item-description {
