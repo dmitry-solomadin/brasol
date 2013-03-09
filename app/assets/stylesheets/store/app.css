@@ -564,6 +564,12 @@ table tbody tr.alt, table tbody tr.odd, table tfoot tr.alt, table tfoot tr.odd {
     padding-top: 5px !important;
 }
 
+.pagination ul > .disabled > a, .pagination ul > .disabled > a:hover {
+    color: #999 !important;
+    border-top-color:#EEE;
+    border-bottom-color:#EEE;
+}
+
 .taxonomyContent {
     border: 1px solid #a0a0a0;
     padding: 10px 10px 7px 10px;
