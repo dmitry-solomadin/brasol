@@ -137,6 +137,10 @@ input[type="submit"], a.button, button {
     color: white !important;
 }
 
+ul#products li {
+    margin-bottom: 5px;
+}
+
 ul#products li a.info {
     font-weight: normal;
     font-family: 'StoryRegular';
