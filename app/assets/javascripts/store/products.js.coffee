@@ -35,9 +35,35 @@ $ ->
     $('#add-to-cart-button').popover('hide')
     return true
 
+  hasVariant = (variantIds, id) -> return true for variantId in variantIds when parseInt(variantId) is parseInt(id)
+
+  filterVariants = (vnameToFilter, vid) ->
+    availableVariants = $("[data-#{vnameToFilter}-id='#{vid}']")
+    vnameIds = {}
+    for availableVariant in availableVariants
+      for dataName of $(availableVariant).data()
+        continue if dataName is "#{vnameToFilter}Id"
+        dataNameTrunc = dataName[0...dataName.length - 2]
+        vnameIds[dataNameTrunc] = [] unless vnameIds[dataNameTrunc]
+        vnameIds[dataNameTrunc].push $(availableVariant).data()[dataName]
+
+    for vname of vnameIds
+      variants = vnameIds[vname]
+      for option in $("##{vname}Select > option")
+        #continue if parseInt($(option).val()) is -1
+        if hasVariant(variants, $(option).val())
+          $(option).removeAttr("disabled")
+        else
+          $(option).attr("disabled", "disabled")
+
   selectProperVariant = ->
     size = $("#sizeSelect option:selected").val()
     color = $("#colorSelect option:selected").val()
+
+    if $("#sizeSelect")[0] and $("#colorSelect")[0]
+      filterVariants("size", size) if size
+      filterVariants("color", color) if color
+
     if size and color
       variantString = "#variant#{size}_#{color}"
     else if size
@@ -46,7 +72,9 @@ $ ->
       variantString = "#variant#{color}"
 
     variantId = $(variantString).val()
+    $("#variantsSelect option").removeAttr("selected")
     $("#variantsSelect option[value='#{variantId}']").attr("selected", "selected")
+    $("#variantsSelect").val(variantId)
 
   $("#sizeSelect").on 'change', -> selectProperVariant()
   $("#colorSelect").on 'change', -> selectProperVariant()

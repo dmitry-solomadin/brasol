@@ -22,11 +22,12 @@ Spree::ProductsController.class_eval do
       active_color = variant.option_values.select { |a| a.option_type.name.start_with? 'color' }.first
 
       if active_color.present? and active_size.present?
-        variant_ids[active_size.id.to_s + '_' + active_color.id.to_s] = variant.id
+        variant_ids[active_size.id.to_s + '_' + active_color.id.to_s] =
+            {variant_id: variant.id, color_id: active_color.id, size_id: active_size.id}
       elsif active_color.present?
-        variant_ids[active_color.id.to_s] = variant.id
+        variant_ids[active_color.id.to_s] = {variant_id: variant.id, color_id: active_color.id}
       elsif active_size.present?
-        variant_ids[active_size.id.to_s] = variant.id
+        variant_ids[active_size.id.to_s] = {variant_id: variant.id, size_id: active_size.id}
       end
 
       sizes << active_size unless active_size.nil?
