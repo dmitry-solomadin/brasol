@@ -226,13 +226,14 @@ ul#products li .price {
     float: left;
     color: #202020;
     font-size: 26px;
-    margin-top: 28px;
+    margin-top: 18px;
     margin-left: 20px;
 }
 
 .working_hours {
     font-size: 12px;
     margin-right: 22px;
+    line-height: 28px;
     color: #a0a0a0;
 }
 
