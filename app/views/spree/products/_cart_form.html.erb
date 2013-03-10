@@ -38,7 +38,7 @@
             <% @double_option['variant_ids'].each_key do |key| %>
               <% v_info = @double_option['variant_ids'][key] %>
               <input type="hidden" id="variant<%= key %>" value="<%= v_info[:variant_id] %>"
-                <%= "data-color-id=#{v_info[:color_id]}" if v_info[:color_id] %>"
+                <%= "data-color-id=#{v_info[:color_id]}" if v_info[:color_id] %>
                 <%= "data-size-id=#{v_info[:size_id]}" if v_info[:size_id] %>/>
             <% end %>
         <% end %>
