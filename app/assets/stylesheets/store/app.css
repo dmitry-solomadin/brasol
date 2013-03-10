@@ -230,6 +230,12 @@ ul#products li .price {
     margin-left: 20px;
 }
 
+.working_hours {
+    font-size: 12px;
+    margin-right: 22px;
+    color: #a0a0a0;
+}
+
 #top-nav-bar {
     width: 690px;
     margin-right: 0;
