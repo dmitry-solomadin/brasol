@@ -9,9 +9,6 @@ set :scm, "git"
 set :user, "root"
 set :scm_passphrase, "thequaker1"
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-
 role :web, "78.47.164.71" # Your HTTP server, Apache/etc
 role :app, "78.47.164.71"
 role :db, "78.47.164.71", :primary => true
