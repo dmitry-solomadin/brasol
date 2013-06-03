@@ -4,6 +4,12 @@
     <%= render :file => 'spree/user_sessions/new', locals: {aux_links: false} %>
   </div>
   <div id="registrationus" class="columns alpha eight">
-    <%= render :file => 'spree/user_registrations/new', locals: {aux_links: false} %>
+    <div id="new-customer" xmlns="http://www.w3.org/1999/html">
+      <h4><%= t(:first_timer) %></h4>
+      <span class="big_desc"><%= t(:reg_desc2) %></span>
+      <%= form_tag seen_reg_page_path do %>
+        <%= submit_tag t(:proceed_to_checkout), :class => 'button primary' %>
+      <% end %>
+    </div>
   </div>
 </div>

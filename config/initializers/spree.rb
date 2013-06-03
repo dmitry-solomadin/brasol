@@ -19,6 +19,7 @@ Spree::Config.set(:allow_guest_checkout => false)
 Spree::Config.set(:address_requires_state => false)
 Spree::Config.set(:admin_products_per_page => 20)
 Spree::Config.set(:products_per_page => 20)
+Spree::Auth::Config[:registration_step] = false
 
 if Rails.env.production?
   Spree::Config.set(:attachment_path => '/data/brasol/public/spree/products/:id/:style/:basename.:extension')

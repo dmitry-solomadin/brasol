@@ -9,6 +9,12 @@ Brasol::Application.routes.draw do
           # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  Spree::Core::Engine.routes.prepend do
+    devise_scope :user do
+      post '/user/seen_reg_page', to: "user_registrations#seen_reg_page", as: :seen_reg_page
+    end
+  end
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

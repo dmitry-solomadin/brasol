@@ -327,6 +327,15 @@ input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hove
     color: black;
 }
 
+#billing p {
+    padding: 5px 0;
+}
+
+#billing #bemail, #billing .noTopField {
+    padding-top: 0;
+    margin-top: 0;
+}
+
 #order_summary {
     padding: 0 10px;
 }
@@ -748,7 +757,7 @@ div[data-hook="product_right_part"] {
     text-align: center;
     background: #FA197D;
     color: white;
-    top: 28px !important;
+    top: 18px !important;
     left: 300px !important;
 }
 
@@ -760,6 +769,29 @@ div[data-hook="product_right_part"] {
     font-size: 16px;
     line-height: 20px;
     padding: 6px 20px 3px 20px;
+}
+
+#loginr p {
+    padding: 0;
+}
+
+#registrationus p {
+    padding: 0;
+}
+
+#registrationus .big_desc {
+    display: block;
+    vertical-align: middle;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+[data-hook="signup"] p {
+    padding: 0;
+}
+
+[data-hook="login"] p {
+    padding: 0;
 }
 
 @font-face {

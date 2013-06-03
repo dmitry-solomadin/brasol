@@ -1,9 +1,20 @@
 <div class="columns alpha six" data-hook="billing_fieldset_wrapper">
   <fieldset id="billing" data-hook>
+    <legend><%= t(:billing_address) %></legend>
+    <% unless current_user %>
+      <p class="field" id="bemail">
+        <%= form.label :new_user_email, t(:email) %><span class="required">*</span><br/>
+        <%= form.text_field :new_user_email, :class => 'required' %>
+      </p>
+
+      <p class="field" id="bfirstname">
+        <%= form.label :new_user_password, t(:password) %><span class="required">*</span><br/>
+        <%= form.password_field :new_user_password, :class => 'required' %>
+      </p>
+    <% end %>
     <%= form.fields_for :bill_address do |bill_form| %>
-        <legend><%= t(:billing_address) %></legend>
         <div class="inner" data-hook="billing_inner">
-          <p class="field" id="bfirstname">
+          <p class="field <%= 'noTopField' if current_user %>" id="bfirstname">
             <%= bill_form.label :firstname, t(:first_name) %><span class="required">*</span><br />
             <%= bill_form.text_field :firstname, :class => 'required' %>
           </p>
