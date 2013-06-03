@@ -1,5 +1,4 @@
 Spree::CheckoutController.class_eval do
-  before_filter :create_and_associate_user, only: :update
 
   def update
     if @order.update_attributes(object_params) and @order.errors.empty?
@@ -70,7 +69,6 @@ Spree::CheckoutController.class_eval do
       @order.associate_user! user
     else
       user.errors.each { |key, message| @order.errors.add(key, message) }
-      #respond_with(@order, :location => checkout_state_path(@order.state))
     end
   end
 
